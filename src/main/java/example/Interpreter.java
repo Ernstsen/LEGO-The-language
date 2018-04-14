@@ -1,3 +1,7 @@
+package example;
+
+import ev3dev.actuators.lego.motors.EV3LargeRegulatedMotor;
+
 import java.util.List;
 
 /**
@@ -5,28 +9,32 @@ import java.util.List;
  */
 public class Interpreter {
 
-    public static void eval(List<Exp> asts) {
+    private Utils utils;
+
+    public Interpreter(CustomEV3LargeRegulatedMotor left, CustomEV3LargeRegulatedMotor right) {
+        this.utils = new Utils(left, right);
+    }
+
+    public void eval(List<Exp> asts) {
         for (Exp ast : asts) {
             doAction(ast);
         }
     }
 
-    private static void doAction(AbstractSyntaxTree abstractSyntaxTree) {
+    private void doAction(AbstractSyntaxTree abstractSyntaxTree) {
         if (abstractSyntaxTree instanceof ForwardExp) {
-            Utils.forward();
+            utils.forward();
         } else if (abstractSyntaxTree instanceof TurnLeft) {
-            Utils.turnLeft();
+            utils.turnLeft();
         } else if (abstractSyntaxTree instanceof TurnRight) {
-            Utils.turnRight();
+            utils.turnRight();
         } else if (abstractSyntaxTree instanceof Reverse) {
-            Utils.reverse();
+            utils.reverse();
         } else if (abstractSyntaxTree instanceof ForLoopExp) {
             ForLoopExp forLoop = (ForLoopExp) abstractSyntaxTree;
             for (int i = 0; i < forLoop.getIterations(); i++) {
                 eval(forLoop.getBody());
             }
         }
-
-
     }
 }

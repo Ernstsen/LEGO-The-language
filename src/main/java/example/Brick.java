@@ -1,3 +1,5 @@
+package example;
+
 public class Brick {
     private int width;
     private int height;
