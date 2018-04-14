@@ -13,8 +13,6 @@ class Exp extends AbstractSyntaxTree {
 
 class ForwardExp extends Exp {}
 
-class BrakeExp extends Exp {}
-
 class TurnLeft extends Exp {}
 
 class TurnRight extends Exp {}
@@ -23,14 +21,19 @@ class Reverse extends Exp {}
 
 class ForLoopExp extends Exp {
 	private List<Exp> body;
+	private int iterations;
 
-	public ForLoopExp(List<Exp> body) {
+	public ForLoopExp(int iter, List<Exp> body) {
 		this.body = body;
-
+		iterations = iter;
 	}
 
 	public List<Exp> getBody() {
 		return body;
+	}
+
+	public int getIterations() {
+		return iterations;
 	}
 }
 
