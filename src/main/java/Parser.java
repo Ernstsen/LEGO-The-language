@@ -24,18 +24,27 @@ public class Parser {
                     break;
                 case "6Yellow":
                     expressions.add(new TurnRight());
+                    break;
                 case "8Black":
                     expressions.add(new Reverse());
                     break;
                 case "6White":
+                    if (!brickIter.hasNext()) {
+                        throw new RuntimeException("Invalid syntax: Forloop followed by end of input");
+                    }
                     brick = brickIter.next();
                     int iterations = brick.getHeight() * brick.getWidth();
                     List<Brick> loopBricks = new ArrayList<>();
-                    while (brick.getColor() != BrickColor.White) {
+                    while (true) {
                         brick = brickIter.next();
-                        loopBricks.add(brick);
+                        if (brick.getColor() != BrickColor.White) {
+                            loopBricks.add(brick);
+                        } else {
+                            break;
+                        }
                     }
                     expressions.add(new ForLoopExp(iterations, parse(loopBricks)));
+                    break;
                 default:
                     expressions.add(new IntLit(brick.getWidth() * brick.getHeight()));
                     break;
