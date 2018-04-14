@@ -21,6 +21,7 @@
 
 # Gradle:
 .idea/**/gradle.xml
+.gradle
 .idea/**/libraries
 
 # CMake
