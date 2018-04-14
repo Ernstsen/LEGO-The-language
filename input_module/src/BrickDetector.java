@@ -1,7 +1,7 @@
 public class BrickDetector {
     
 
-    public detect() { 
+    public void detect() {
         ;
     }
 }

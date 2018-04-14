@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/compute_proj.iml" filepath="$PROJECT_DIR$/compute_proj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/compute_proj_main.iml" filepath="$PROJECT_DIR$/.idea/modules/compute_proj_main.iml" group="compute_proj" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/compute_proj_test.iml" filepath="$PROJECT_DIR$/.idea/modules/compute_proj_test.iml" group="compute_proj" />
+      <module fileurl="file://$PROJECT_DIR$/input_module/input_module.iml" filepath="$PROJECT_DIR$/input_module/input_module.iml" />
+    </modules>
+  </component>
+</project>
