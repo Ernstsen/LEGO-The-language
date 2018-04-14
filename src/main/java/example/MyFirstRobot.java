@@ -1,6 +1,5 @@
 package example;
 
-import ev3dev.actuators.lego.motors.EV3LargeRegulatedMotor;
 import ev3dev.sensors.Battery;
 import lejos.hardware.port.MotorPort;
 import lejos.utility.Delay;
@@ -10,8 +9,8 @@ public class MyFirstRobot {
     public static void main(final String[] args){
 
         System.out.println("Creating Motor A & B");
-        final EV3LargeRegulatedMotor motorLeft = new EV3LargeRegulatedMotor(MotorPort.A);
-        final EV3LargeRegulatedMotor motorRight = new EV3LargeRegulatedMotor(MotorPort.B);
+        final CustomEV3LargeRegulatedMotor motorLeft = new CustomEV3LargeRegulatedMotor(MotorPort.A);
+        final CustomEV3LargeRegulatedMotor motorRight = new CustomEV3LargeRegulatedMotor(MotorPort.B);
 
         //To Stop the motor in case of pkill java for example
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {

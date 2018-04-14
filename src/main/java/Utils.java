@@ -23,6 +23,7 @@ class Utils {
         if (isTest) {
             System.out.println("Forward!");
         } else {
+            LCDUtils.writeMessage("Go!");
             motorLeft.rotate(180);
             motorRight.rotate(180);
         }
