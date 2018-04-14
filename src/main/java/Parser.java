@@ -1,11 +1,11 @@
 /**
  * @author Johannes Ernstsen
  *
- * Parses to an AST
+ * Parses to an AbstractSyntaxTree
  */
 public class Parser {
 
-    public static AST parse(){
-        return new AST();
+    public static AbstractSyntaxTree parse(){
+        return new AbstractSyntaxTree();
     }
 }

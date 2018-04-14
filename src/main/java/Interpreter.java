@@ -3,7 +3,7 @@
  */
 public class Interpreter {
 
-    public static void eval(AST ast) {
+    public static void eval(AbstractSyntaxTree ast) {
         
     }
 }
