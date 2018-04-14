@@ -5,28 +5,53 @@ import lejos.hardware.port.MotorPort;
  * @author Johannes Ernstsen
  */
 class Utils {
+    private static boolean isTest = false;
+    private static EV3LargeRegulatedMotor motorLeft;
+    private static EV3LargeRegulatedMotor motorRight;
 
-    private static final EV3LargeRegulatedMotor motorLeft = new EV3LargeRegulatedMotor(MotorPort.A);
-    private static final EV3LargeRegulatedMotor motorRight = new EV3LargeRegulatedMotor(MotorPort.B);
+    static {
+        try {
+            motorLeft = new EV3LargeRegulatedMotor(MotorPort.A);
+            motorRight = new EV3LargeRegulatedMotor(MotorPort.B);
+        } catch (Exception e) {
+            isTest = true;
+        }
 
+    }
 
     static void forward() {
-        motorLeft.rotate(180);
-        motorRight.rotate(180);
+        if (isTest) {
+            System.out.println("Forward!");
+        } else {
+            motorLeft.rotate(180);
+            motorRight.rotate(180);
+        }
     }
 
     static void turnLeft() {
-        motorLeft.rotate(180);
-        motorRight.rotate(-180);
+        if (isTest) {
+            System.out.println("TurnLeft");
+        } else {
+            motorLeft.rotate(180);
+            motorRight.rotate(-180);
+        }
     }
 
     static void turnRight() {
-        motorLeft.rotate(-180);
-        motorRight.rotate(180);
+        if (isTest) {
+            System.out.println("TurnRight");
+        } else {
+            motorLeft.rotate(-180);
+            motorRight.rotate(180);
+        }
     }
 
     static void reverse() {
-        motorLeft.rotate(-180);
-        motorRight.rotate(-180);
+        if (isTest) {
+            System.out.println("Reverse");
+        } else {
+            motorLeft.rotate(-180);
+            motorRight.rotate(-180);
+        }
     }
 }
