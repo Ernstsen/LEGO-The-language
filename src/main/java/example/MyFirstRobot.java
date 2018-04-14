@@ -27,47 +27,39 @@ public class MyFirstRobot {
             motorRight.stop();
         }));
 
-        try {
-            instructions = socketListener.listenForInstructions();
-        } catch (IOException e) {
-            e.printStackTrace();
-            instructions = easterEgg();
+        int iteration = 0;
+
+        while(iteration < 50) {
+            try {
+                instructions = socketListener.listenForInstructions();
+            } catch (IOException e) {
+                e.printStackTrace();
+                instructions = easterEgg();
+            }
+            iteration += 1;
+
+            // Create the interpreter and interpret the bricks.
+            Interpreter interpreter = new Interpreter(motorLeft, motorRight);
+            interpreter.eval(Parser.parse(instructions));
         }
-
-        // Create the interpreter and interpret the bricks.
-        Interpreter interpreter = new Interpreter(motorLeft, motorRight);
-        interpreter.eval(Parser.parse(instructions));
-
-        System.out.println("Defining the Stop mode");
-        motorLeft.brake();
-        motorRight.brake();
-
-        System.out.println("Stop motors");
-        motorLeft.stop();
-        motorRight.stop();
 
         System.exit(0);
     }
 
     private static List<Brick> easterEgg() {
-        Brick forward = new Brick(6, 2, BrickColor.DarkGreen);
-        Brick loopStart = new Brick(6, 2, BrickColor.White);
-        Brick iterations = new Brick(3, 1, BrickColor.DarkBlue);
-        Brick loopEnd = new Brick(6, 2, BrickColor.White);
-        Brick turnLeft = new Brick(3, 2, BrickColor.Red);
-        Brick reverse = new Brick(8, 3, BrickColor.Black);
-        Brick turnRight = new Brick(6, 8, BrickColor.Yellow);
+        System.out.println("Easter egg! Wuhuu!");
+        Brick forward = new Brick(BrickColor.Green);
+        Brick turnLeft = new Brick(BrickColor.Blue);
+        Brick turnRight = new Brick(BrickColor.Red);
         List<Brick> bricks = new ArrayList<>();
 
         bricks.add(forward);
-        bricks.add(loopStart);
-        bricks.add(iterations); //Value=6
         bricks.add(forward);
         bricks.add(turnLeft);
-        bricks.add(reverse);
         bricks.add(turnRight);
-        bricks.add(loopEnd);
-        bricks.add(reverse);
+        bricks.add(turnRight);
+        bricks.add(turnLeft);
+        bricks.add(forward);
 
         return bricks;
     }

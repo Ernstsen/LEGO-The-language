@@ -15,9 +15,9 @@ public class Interpreter {
         this.utils = new Utils(left, right);
     }
 
-    public void eval(List<Exp> asts) {
-        for (Exp ast : asts) {
-            doAction(ast);
+    public void eval(List<Exp> exps) {
+        for (Exp exp : exps) {
+            doAction(exp);
         }
     }
 
@@ -28,13 +28,6 @@ public class Interpreter {
             utils.turnLeft();
         } else if (abstractSyntaxTree instanceof TurnRight) {
             utils.turnRight();
-        } else if (abstractSyntaxTree instanceof Reverse) {
-            utils.reverse();
-        } else if (abstractSyntaxTree instanceof ForLoopExp) {
-            ForLoopExp forLoop = (ForLoopExp) abstractSyntaxTree;
-            for (int i = 0; i < forLoop.getIterations(); i++) {
-                eval(forLoop.getBody());
-            }
         }
     }
 }
