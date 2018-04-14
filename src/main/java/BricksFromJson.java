@@ -3,25 +3,16 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
 import java.util.ArrayList;
+import java.util.List;
 
-public class bricksFromJSON {
+public class BricksFromJson {
 
-    public ArrayList<Brick> getListOfBricksFromJSON(String pathToJSON) {
+    public static List<Brick> getListOfBricksFromJson(String jsonPackage) {
         Gson gson = new Gson();
         ArrayList<Brick> listOfBricks = new ArrayList<>();
-        Reader reader = null;
 
-        try {
-            reader = new FileReader(pathToJSON);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        JsonObject jsonObject = gson.fromJson(reader, JsonObject.class);
+        JsonObject jsonObject = gson.fromJson(jsonPackage, JsonObject.class);
         JsonArray bricks = jsonObject.getAsJsonArray("Bricks");
 
         for (JsonElement brick : bricks) {
