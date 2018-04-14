@@ -3,7 +3,6 @@ package example;//
 // (powered by Fernflower decompiler)
 //
 
-import ev3dev.hardware.EV3DevMotorDevice;
 import ev3dev.sensors.Battery;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,7 +15,7 @@ import lejos.utility.Delay;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public abstract class CustomBaseRegulatedMotor extends EV3DevMotorDevice implements RegulatedMotor {
+public abstract class CustomBaseRegulatedMotor extends CustomEv3DevMotorDevice implements RegulatedMotor {
     private static final Logger log = LoggerFactory.getLogger(CustomBaseRegulatedMotor.class);
     protected final int MAX_SPEED_AT_9V;
     private int speed = 360;

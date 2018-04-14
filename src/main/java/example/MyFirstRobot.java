@@ -9,8 +9,8 @@ public class MyFirstRobot {
     public static void main(final String[] args){
 
         System.out.println("Creating Motor A & B");
-        final CustomEV3LargeRegulatedMotor motorLeft = new CustomEV3LargeRegulatedMotor(MotorPort.A);
-        final CustomEV3LargeRegulatedMotor motorRight = new CustomEV3LargeRegulatedMotor(MotorPort.B);
+        final CustomEV3LargeRegulatedMotor motorLeft = new CustomEV3LargeRegulatedMotor(MotorPort.B);
+        final CustomEV3LargeRegulatedMotor motorRight = new CustomEV3LargeRegulatedMotor(MotorPort.C);
 
         //To Stop the motor in case of pkill java for example
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
@@ -51,8 +51,6 @@ public class MyFirstRobot {
         motorLeft.stop();
         motorRight.stop();
 
-        System.out.println("Checking Battery");
-        System.out.println("Votage: " + Battery.getInstance().getVoltage());
 
         System.exit(0);
     }
