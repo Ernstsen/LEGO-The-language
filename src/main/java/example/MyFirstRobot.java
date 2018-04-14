@@ -26,6 +26,7 @@ public class MyFirstRobot {
         motorLeft.brake();
         motorRight.brake();
 
+
         System.out.println("Defining motor speed");
         final int motorSpeed = 200;
         motorLeft.setSpeed(motorSpeed);
