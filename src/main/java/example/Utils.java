@@ -35,7 +35,7 @@ public class Utils {
             System.out.println("Turn left");
             motorLeft.backward();
             motorRight.forward();
-            Delay.msDelay(300);
+            Delay.msDelay(550);
             motorLeft.stop();
             motorRight.stop();
         }
@@ -48,7 +48,7 @@ public class Utils {
             System.out.println("Turn right");
             motorLeft.forward();
             motorRight.backward();
-            Delay.msDelay(300);
+            Delay.msDelay(550);
             motorLeft.stop();
             motorRight.stop();
         }
