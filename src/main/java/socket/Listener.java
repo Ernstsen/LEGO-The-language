@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Listener {
@@ -26,6 +27,10 @@ public class Listener {
 	    Socket clientSocket = serverSocket.accept();
         BufferedReader inputReader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         String jsonPackage = inputReader.readLine();
-        return BricksFromJson.getListOfBricksFromJson(jsonPackage);
+        serverSocket.close();
+        if (jsonPackage != null)
+        	return BricksFromJson.getListOfBricksFromJson(jsonPackage);
+        else
+        	return new ArrayList<>();
     }
 }

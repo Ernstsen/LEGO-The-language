@@ -6,6 +6,7 @@ import lejos.robotics.Color;
 
 /**
  * @author Marina Alenskaja
+ * TODO: Fix version incompatibility issues, and re-enable
  */
 public class LCDUtils {
 

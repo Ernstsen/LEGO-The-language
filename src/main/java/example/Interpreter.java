@@ -1,7 +1,5 @@
 package example;
 
-import ev3dev.actuators.lego.motors.EV3LargeRegulatedMotor;
-
 import java.util.List;
 
 /**

@@ -11,6 +11,9 @@ import lejos.hardware.port.SensorPort;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * TODO: This is NOT the correct way to fix compatibility issues. Should be fixed
+ */
 public abstract class CustomEV3DevPlatforms extends EV3DevFileSystem {
     private static final Logger log = LoggerFactory.getLogger(CustomEV3DevPlatforms.class);
 

@@ -6,6 +6,9 @@ package example;//
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * TODO: This is NOT the correct way to fix compatibility issues. Should be fixed
+ */
 public abstract class CustomEv3DevMotorDevice extends CustomEV3Device {
     private static final Logger log = LoggerFactory.getLogger(CustomEv3DevMotorDevice.class);
     protected static final String TACHO_MOTOR = "tacho-motor";

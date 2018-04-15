@@ -31,6 +31,7 @@ public class MyFirstRobot {
 
         while(iteration < 50) {
             try {
+                System.out.println("Listening for connections");
                 instructions = socketListener.listenForInstructions();
             } catch (IOException e) {
                 e.printStackTrace();
