@@ -3,7 +3,7 @@ package example;
 import lejos.utility.Delay;
 
 /**
- * @author Johannes Ernstsen
+ * @author Johannes Ernstsen, Marina Alenskaja
  */
 public class Utils {
     private boolean isTest = false;
@@ -20,8 +20,8 @@ public class Utils {
             System.out.println("Forward!");
         } else {
             System.out.println("Forward!");
-            motorLeft.forward();
-            motorRight.forward();
+            motorLeft.backward();
+            motorRight.backward();
             Delay.msDelay(1000);
             motorLeft.stop();
             motorRight.stop();
@@ -33,8 +33,8 @@ public class Utils {
             System.out.println("Turn left");
         } else {
             System.out.println("Turn left");
-            motorLeft.backward();
-            motorRight.forward();
+            motorLeft.forward();
+            motorRight.backward();
             Delay.msDelay(550);
             motorLeft.stop();
             motorRight.stop();
@@ -46,8 +46,8 @@ public class Utils {
             System.out.println("Turn right");
         } else {
             System.out.println("Turn right");
-            motorLeft.forward();
-            motorRight.backward();
+            motorLeft.backward();
+            motorRight.forward();
             Delay.msDelay(550);
             motorLeft.stop();
             motorRight.stop();

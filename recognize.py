@@ -68,7 +68,7 @@ def send(arr):
 	start_string += "]}"
 	print(start_string)
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	s.connect(("192.168.2.3", 8192))
+	s.connect(("192.168.2.2", 8192))
 	s.sendall(start_string.encode())
 	s.close()
 
