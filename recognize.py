@@ -74,7 +74,7 @@ def send(arr):
 
 def generate(red, green, blue):
 	arr = []
-	ran = range(249,256)
+	ran = range(247,256)
 	for i, _ in enumerate(red):
 		if any([x for x in ran if x in red[i]]):
 			arr.append('r')
@@ -90,7 +90,8 @@ def generate(red, green, blue):
 def main():
 	path = arg['path']
 	print('Resizing image')
-	img = cv2.resize(cv2.imread(path,cv2.IMREAD_COLOR), (0,0), fx=0.1, fy=0.1)
+	img = cv2.imread(path,cv2.IMREAD_COLOR)
+	# resize = cv2.resize(img, (0,0), fx=0.1, fy=0.1)
 	print('Finding red bricks')
 	red = find(img, 'red')
 	print('Finding green bricks')
@@ -98,9 +99,9 @@ def main():
 	print('Finding blue bricks')
 	blue = find(img, 'blue')
 	arr = generate(red, green, blue)
-	# cv2.imwrite('red.png',red)
-	# cv2.imwrite('green.png',green)
-	# cv2.imwrite('blue.png',blue)
+	cv2.imwrite('red.png',red)
+	cv2.imwrite('green.png',green)
+	cv2.imwrite('blue.png',blue)
 	print('Sending JSON')
 	send(arr)
 
