@@ -15,12 +15,16 @@ public class BricksFromJson {
         Gson gson = new Gson();
         ArrayList<Brick> listOfBricks = new ArrayList<>();
 
+        System.out.println(jsonPackage);
+
         JsonObject jsonObject = gson.fromJson(jsonPackage, JsonObject.class);
         JsonArray bricks = jsonObject.getAsJsonArray("Bricks");
 
         for (JsonElement brick : bricks) {
             listOfBricks.add(gson.fromJson(brick, Brick.class));
         }
+
+        listOfBricks.forEach(str -> System.out.println(str));
 
         return listOfBricks;
     }
