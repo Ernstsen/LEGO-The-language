@@ -3,7 +3,7 @@ package example;
 import lejos.hardware.port.Port;
 
 /**
- * @author Johannes Ernstsen
+ * TODO: This is NOT the correct way to fix compatibility issues. Should be fixed
  */
 public class CustomEV3LargeRegulatedMotor extends CustomBaseRegulatedMotor {
     private static final float MOVE_P = 4.0F;

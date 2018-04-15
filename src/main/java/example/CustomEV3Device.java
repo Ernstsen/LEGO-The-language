@@ -10,7 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * @author Johannes Ernstsen
+ * TODO: This is NOT the correct way to fix compatibility issues. Should be fixed
  */
 public class CustomEV3Device extends CustomEV3DevPlatforms {
 

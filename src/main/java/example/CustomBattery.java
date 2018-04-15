@@ -7,7 +7,9 @@ import ev3dev.utils.Sysfs;
 import lejos.hardware.Power;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+/**
+ * TODO: This is NOT the correct way to fix compatibility issues. Should be fixed
+ */
 public class CustomBattery extends CustomEV3Device implements Power {
 	private static final Logger log = LoggerFactory.getLogger(CustomBattery.class);
 	private static final String BATTERY = "power_supply";
